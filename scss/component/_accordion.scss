@@ -1,0 +1,90 @@
+@use "../utils" as *;
+
+.accordion {
+	position: relative;
+	width: 100%;
+	&__item {
+		position: relative;
+		&:first-child {
+			border-top: 1px solid var(--color-box-border);
+		}
+		border-bottom: 1px solid var(--color-box-border);
+		padding: 21.7px 0;
+		> input {
+			padding: 0;
+			height: initial;
+			width: initial;
+			margin-bottom: 0;
+			display: none;
+			cursor: pointer;
+			&:checked {
+				+ {
+					label {
+						&:after {
+							opacity: 1;
+							visibility: visible;
+							transform: scale(0.9);
+						}
+						&:before {
+							background-color: var(--color-checkbox-bg);
+							border-color: var(--color-checkbox-bg);
+						}
+					}
+					label + .contents {
+						padding-top: 15px;
+						opacity: 1;
+						visibility: visible;
+						max-height: fit-content;
+					}
+				}
+			}
+		}
+		label {
+			position: relative;
+			cursor: pointer;
+			@include flexbox();
+			@include align-items($value: center);
+			@include flex-wrap($value: wrap);
+			margin-bottom: 0 !important;
+			padding-left: 30px;
+			color: #000025;
+			@include toRem(font-size, 18);
+			font-weight: 500;
+			&:before {
+				content: '';
+				border: 1px solid var(--color-checkbox);
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+				position: absolute;
+				left: 0;
+				vertical-align: middle;
+				cursor: pointer;
+				@include border-radius(10px);
+			}
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				left: 5px;
+				border-radius: 50%;
+				background-color: var(--color-white);
+				opacity: 0;
+				visibility: hidden;
+				transform: scale(0);
+				transition: transform .3s;
+			}
+		}
+		.contents {
+			max-height: 0px;
+			opacity: 0;
+			visibility: hidden;
+			width: 100%;
+			transition: all .3s ease-in-out;
+			padding-left: 30px;
+			overflow: hidden;
+		}
+	}
+}

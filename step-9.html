@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#BE2530">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Info</title>
+    <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <main>
+    <div class="wrapper">
+      <aside>
+        <div class="sidebar">
+            <ul>
+                <li>
+                  <div class="home">
+                    <img src="images/transaction-info-ico.svg" alt="home icon" />
+                  </div>
+                  Transaction info
+                </li>
+                <li class="completed">
+                    <div class="icon"></div>
+                    <div class="icon-text">
+                        <span>
+                            Closing Process Details
+                            <i class="edit-icon"><img src="images/edit-white-icon.svg" alt="edit icon" /></i>
+                        </span>
+                        <ul>
+                            <li>Closing attorney: <span>Answer</span></li>
+                            <li>Closing place: <span>Real Estate Office</span></li>
+                            <li>POA for closing: <span>Yes</span></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="completed">
+                    <div class="icon"></div>
+                    <div class="icon-text">
+                        <span>
+                            Property Information
+                            <i class="edit-icon"><img src="images/edit-white-icon.svg" alt="edit icon" /></i>
+                        </span>
+                        <ul>
+                            <li>Closing attorney: <span>Answer</span></li>
+                            <li>Closing place: <span>Real Estate Office</span></li>
+                            <li>POA for closing: <span>Yes</span></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="completed">
+                  <div class="icon"></div>
+                  <div class="icon-text">
+                      <span>
+                        Appraiser Contact
+                          <i class="edit-icon"><img src="images/edit-white-icon.svg" alt="edit icon" /></i>
+                      </span>
+                      <ul>
+                          <li>Appraiser: <span>Chris Billingslea</span></li>
+                      </ul>
+                  </div>
+                </li>
+                <li class="current">
+                  <div class="icon"></div>
+                  Earnest money deposit proof
+                </li>
+                <li>
+                  <div class="icon"></div>
+                  Additional information
+                </li>
+              </ul>
+          <div class="user-info">
+            <div class="avatar">
+              <img src="images/user-avatar.png" alt="profile image" />
+            </div>
+            <div class="name-contact">
+              <h4>Jonathan Rarick</h4>
+              <span>Upfront Underwriting Guru</span>
+              <ul>
+                <li>
+                  <img class="img-white" src="images/call-icon.svg" alt="call icon" /><a href="tel:(615) 933-2930"> (615)
+                    933-2930</a>
+                </li>
+                <li>
+                  <img class="img-white" src="images/mail-icon.svg" alt="mail icon"><a
+                    href="mailto:jonathan@locklerlendingteam.com">
+                    jonathan@locklerlendingteam.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <div class="main-content">
+        <div class="container">
+          <nav class="pt-4 d-flex justify-content-between align-items-center">
+              <div class="logo">
+                  <img src="images/logo.png" alt="locklear team" />
+              </div>
+              <button type="button" class="burger" id="burger">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+          </nav>
+          <div class="form-content">
+            <div class="form-element">
+              <form>
+                <div class="form-group">
+                    <div class="question">
+                        <h2>Do you have proof of earnest money deposit?</h2>
+                    </div>
+                    <div class="answer">
+                        <ul>
+                            <li>
+                                <input type="radio" id="yes" name="agent">
+                                <label for="yes"> 
+                                    <img src="images/yes-icon.svg">
+                                    <span>Yes</span>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="no" name="agent">
+                                <label for="no"> 
+                                    <img src="images/no-icon.svg">
+                                    <span>No</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="button">
+                  <button type="button" class="btn btn-outline" onclick="window.location.href='step-8.html'"><span>Previous</span></button>
+                  <button type="button" class="btn" disabled
+                    onclick="window.location.href='step-9.2.html'"><span>Continue</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.answer ul li input').click(function () {
+        $('button').removeAttr("disabled");
+        $('button').last().addClass("btn-red");
+      });
+    });
+  </script>
+</body>
+
+</html>
